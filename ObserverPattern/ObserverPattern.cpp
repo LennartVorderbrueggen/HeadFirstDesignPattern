@@ -10,13 +10,13 @@ void weatherService() {
     AvgWeatherDisplay* display1 = new AvgWeatherDisplay(weatherCenter);
     CurrentConditionsDisplay* display2 = new CurrentConditionsDisplay(weatherCenter);
     CurrentConditionsDisplay* display3 = new CurrentConditionsDisplay(weatherCenter);
-    AvgWeatherDisplay* display4;
+    HeatIndexDisplay* display4;
 
     weatherCenter->setMeasurements();
     display1->removeMeFromList();
     Sleep(5000);
     weatherCenter->setMeasurements();
-    display4 = new AvgWeatherDisplay(weatherCenter);
+    display4 = new HeatIndexDisplay(weatherCenter);
     weatherCenter->setMeasurements();
 
     delete display3;
@@ -28,7 +28,6 @@ void weatherService() {
 int main()
 {
     weatherService();
-
 }
 
 
