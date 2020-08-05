@@ -1,6 +1,5 @@
 #include <iostream>
 
-
 class Beverage {
 public:
 	std::string description = "Unknown Beverage";
@@ -53,6 +52,21 @@ public:
 	};
 };
 
+class Decaf : public Beverage {
+public:
+	Decaf() {
+		description = "Decaf";
+		price = 0.99;
+	}
+	double cost() {
+		return this->getPrice();
+	}
+	std::string getDescription() {
+		return this->description;
+	};
+};
+
+
 class Espresso : public Beverage {
 public:
 	Espresso() {
@@ -94,6 +108,40 @@ public:
 	}
 	std::string getDescription() {
 		std::string name = ", Whip";
+		return beverage->getDescription() + name;
+	}
+	double cost() {
+		return beverage->cost() + this->getPrice();
+	}
+};
+
+class Soy : public ConditmentDecorator {
+	Beverage* beverage;
+
+public:
+	Soy(Beverage* beverage) {
+		price = 0.15;
+		this->beverage = beverage;
+	}
+	std::string getDescription() {
+		std::string name = ", Soy";
+		return beverage->getDescription() + name;
+	}
+	double cost() {
+		return beverage->cost() + this->getPrice();
+	}
+};
+
+class SteamedMilk : public ConditmentDecorator {
+	Beverage* beverage;
+
+public:
+	SteamedMilk(Beverage* beverage) {
+		price = 0.20;
+		this->beverage = beverage;
+	}
+	std::string getDescription() {
+		std::string name = ", SteamedMilk";
 		return beverage->getDescription() + name;
 	}
 	double cost() {
