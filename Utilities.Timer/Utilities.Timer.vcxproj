@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{ff356f41-fcb9-4d60-acf9-ce1628f4dbd7}</ProjectGuid>
-    <RootNamespace>FactoryPattern</RootNamespace>
+    <ProjectGuid>{77f9a713-0485-4449-8938-5be6a56aaa14}</ProjectGuid>
+    <RootNamespace>UtilitiesTimer</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,10 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="FactoryPattern.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PizzaStore.h" />
+    <ClCompile Include="Utilities.Timer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

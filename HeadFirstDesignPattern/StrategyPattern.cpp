@@ -36,6 +36,10 @@ void duckSim() {
     mduck.performFly();
     mduck.setFlyBehavior(new FlyRocketPowered);
     mduck.performFly();
+
+    delete &cduck;
+    delete &rduck;
+    delete &mduck;
 }
 
 int main()

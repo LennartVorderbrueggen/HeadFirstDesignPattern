@@ -2,8 +2,16 @@
 //
 
 #include <iostream>
+#include "PizzaStore.h"
 
 int main()
 {
+	PizzaFactory* factory = new PizzaFactory();
+	PizzaStore* myStore = new PizzaStore(*factory);
 
+	Pizza myCheesePizza = myStore->orderPizza("CheesePizza");
+	myCheesePizza.getDescriptions();
+
+	Pizza myNewPizza = myStore->orderPizza("ClamPizza");
+	myNewPizza.getDescriptions();
 }

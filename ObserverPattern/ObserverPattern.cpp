@@ -19,6 +19,7 @@ void weatherService() {
     display4 = new HeatIndexDisplay(weatherCenter);
     weatherCenter->setMeasurements();
 
+    delete display4;
     delete display3;
     delete display2;
     delete display1;

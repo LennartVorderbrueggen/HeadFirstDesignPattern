@@ -1,7 +1,10 @@
 #include <iostream>
 
+enum Size { TALL, GRANDE, VENTI };
+
 class Beverage {
 public:
+	Size size = Size::TALL;
 	std::string description = "Unknown Beverage";
 	double price;
 
@@ -13,15 +16,17 @@ public:
 		return price;
 	}
 
-	virtual std::string getDescription() = 0;
+	void setSize() {
+		this->size = size;
+	}
 
+	Size getSize() {
+		return this->size;
+	}
+
+	virtual std::string getDescription() = 0;
 	virtual double cost() = 0;
 
-};
-
-class ConditmentDecorator : public Beverage {
-public:
-	virtual std::string getDescription() = 0;
 };
 
 class HouseBlend : public Beverage {
@@ -81,6 +86,11 @@ public:
 	};
 };
 
+class ConditmentDecorator : public Beverage {
+public:
+	virtual std::string getDescription() = 0;
+};
+
 class Mocha : public ConditmentDecorator {
 	Beverage* beverage;
 
@@ -128,7 +138,17 @@ public:
 		return beverage->getDescription() + name;
 	}
 	double cost() {
-		return beverage->cost() + this->getPrice();
+		double cost = beverage->cost();
+		if (beverage->getSize() == Size::GRANDE) {
+			cost = cost + 0.10;
+		}
+		else if (beverage->getSize() == Size::GRANDE) {
+			cost = cost + + 0.15;
+		}
+		else if (beverage->getSize() == Size::GRANDE) {
+			cost = cost + 0.20;
+		}
+		return  cost;
 	}
 };
 

@@ -20,6 +20,6 @@ int main()
     Beverage* beverage3 = new DarkRoast();
     beverage3 = new Mocha(beverage3);
     beverage3 = new Whip(beverage3);
-    beverage3 = new Whip(beverage3);
+    beverage3 = new Soy(beverage3);
     std::cout << beverage3->getDescription() << " : " << beverage3->cost() << "\n";
 }
